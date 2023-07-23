@@ -1,0 +1,99 @@
+:root {
+  font-size: 1rem;
+  --fs-sm: 0.875rem;
+  --fs-md: 1rem;
+  --fs-lg: 1.125rem;
+  --fs-xl: 1.25rem;
+  --fs-2xl: 1.5rem;
+  --fs-3xl: 2rem;
+  --fs-4xl: 3rem;
+}
+
+#root {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+body {
+  font-size: var(--fs-3xl);
+  line-height: 1.1;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+/****************************************************** utility classes************************************************ */
+
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem)
+}
+
+.flow-p3 {
+  margin-bottom: .3rem;
+}
+
+/* ***************************************************************************************************************** */
+.card {
+  width: 60%;
+  padding: 3rem 3rem 3rem 3rem;
+  white-space: wrap;
+  /* border-left: 1px solid black; */
+  row-gap: 2rem;
+  flex-direction: column;
+}
+
+.line {
+
+  writing-mode: vertical-lr;
+  /* min-height: 15rem; */
+  width: 20px;
+  background: #F7DF94;
+
+
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.quote-container {
+  gap: 5rem;
+}
+
+.name-tag-container {
+  margin-left: 5rem;
+  padding-block: 3rem;
+  padding-inline-start: 1rem;
+}
+
+.name-tag-container>p {
+  color: white;
+  margin-right: 2rem;
+
+}
+
+.name-tag-container>div>p {
+
+  font-size: var(--fs-sm);
+}
+
+
+
+
+
+
+.name-tag-container:hover {
+  background: #333333;
+  color: white;
+  justify-content: space-between;
+  align-items: center;
+}
