@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 
 
-const Card = ({quote}) => {
+const Card = ({ quoteText, onClick, quoteAuthor }) => {
 
     const text = "Lorem ipsum dolor sit amet consectetur adipisicing elit Perferendis eos vero sed repudiandae accusantium doloribu cum dolor nam similique earum, quod et culp inventore deserunt unde dolore adipisci velit ipsum"
     return (
@@ -9,13 +9,13 @@ const Card = ({quote}) => {
             <div className='quote-container flex'>
                 <div className='line'></div>
                 <p>
-                    {quote}
+                    {quoteText}
                 </p>
             </div>
-            <Link>
+            <Link to={`/author/${quoteAuthor}`} onClick={onClick}>
                 <div className='name-tag-container flex'>
                     <div>
-                        <h5 className='flow-p3'>Bill Gates</h5>
+                        <h5 className='flow-p3'>{quoteAuthor}</h5>
                         <p>Business</p>
                     </div >
                     <p>&#10141;</p>
