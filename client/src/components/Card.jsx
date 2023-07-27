@@ -4,6 +4,8 @@ import { Link } from "react-router-dom"
 const Card = ({ quoteText, onClick, quoteAuthor }) => {
 
     const text = "Lorem ipsum dolor sit amet consectetur adipisicing elit Perferendis eos vero sed repudiandae accusantium doloribu cum dolor nam similique earum, quod et culp inventore deserunt unde dolore adipisci velit ipsum"
+
+
     return (
         <blockquote className='card flex' >
             <div className='quote-container flex'>
@@ -12,6 +14,7 @@ const Card = ({ quoteText, onClick, quoteAuthor }) => {
                     {quoteText}
                 </p>
             </div>
+            {/* onClick add event listener to move to nextpage */}
             <Link to={`/author/${quoteAuthor}`} onClick={onClick}>
                 <div className='name-tag-container flex'>
                     <div>

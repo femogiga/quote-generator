@@ -1,52 +1,44 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import random from 'random'
-
 import './App.css'
 import Card from './components/Card'
+import { QuoteContext } from './context/QuoteContext'
+import Refresh from './components/Refresh'
+
 
 function App() {
-  const [data, setData] = useState([])
+  // const [data, setData] = useState([])
   const [authorQuotes, setAuthorQuotes] = useState([])
   const [randomAuthor, setRandomAuthor] = useState("")
 
 
-  const handleClick = (quoteAuthor) => {
-    const quotes = data.filter(quote => {
-      return quote.quoteAuthor = quoteAuthor
-    })
-    setAuthorQuotes(quotes)
-    return quotes
-
-  }
 
 
+
+  const { data, setData, } = useContext(QuoteContext)
 
   useEffect(() => {
-    fetch('https://quote-garden.onrender.com/api/v3/quotes')
-      .then(res => res.json())
-      .then(res => res.data)
-      .then(res => setData(res))
-      .catch(error => console.error(error))
-
-
-  }, [])
-
-
-  useEffect(() => {
+    // console.log(data)
     setRandomAuthor(data[random.int(0, data.length - 1)])
   }, [data])
 
 
 
+  const handleClick = (e) =>{
+    e.preventDefault()
+    setRandomAuthor(data[random.int(0, data.length - 1)])
+  }
 
 
-  // console.log(Array.isArray( data))
-  // console.log(data[4]?.quoteText)
-  console.log(randomAuthor)
+
+
+
+
   return (
     <div>
+      <Refresh onClick={(e)=>handleClick(e)}/>
 
-      {data && <Card quoteText={randomAuthor?.quoteText} />}
+      {data && <Card quoteText={randomAuthor?.quoteText} quoteAuthor={randomAuthor?.quoteAuthor}  authorQuotes={authorQuotes} />}
     </div>
   )
 }
