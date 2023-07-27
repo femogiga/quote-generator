@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom"
+import { PropTypes } from "prop-types";
 
 
-const Card = ({ quoteText, onClick, quoteAuthor,quoteGenre }) => {
+const Card = ({ quoteText, onClick, quoteAuthor, quoteGenre }) => {
 
-    const text = "Lorem ipsum dolor sit amet consectetur adipisicing elit Perferendis eos vero sed repudiandae accusantium doloribu cum dolor nam similique earum, quod et culp inventore deserunt unde dolore adipisci velit ipsum"
+
 
 
     return (
@@ -14,7 +15,7 @@ const Card = ({ quoteText, onClick, quoteAuthor,quoteGenre }) => {
                     {quoteText}
                 </p>
             </div>
-            {/* onClick add event listener to move to nextpage */}
+            {/* onClick  to refresh data */}
             <Link to={`/author/${quoteAuthor}`} onClick={onClick}>
                 <div className='name-tag-container flex'>
                     <div>
@@ -27,7 +28,13 @@ const Card = ({ quoteText, onClick, quoteAuthor,quoteGenre }) => {
         </blockquote>
     )
 }
+Card.propTypes = {
+    quoteText: PropTypes.string,
+    quoteAuthor: PropTypes.string,
+    quoteGenre: PropTypes.string,
+    onClick: PropTypes.func,
 
+};
 
 
 export default Card

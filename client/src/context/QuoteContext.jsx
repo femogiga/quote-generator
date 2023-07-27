@@ -30,7 +30,6 @@ const QuoteProvider = (props) => {
 
 
 
-    console.log('data', data)
 
 
     return (

@@ -11,9 +11,7 @@ function App() {
   // const [data, setData] = useState([])
   const [authorQuotes, setAuthorQuotes] = useState([])
   const [randomAuthor, setRandomAuthor] = useState("")
-  const Loading = <span className="material-symbols-outlined">
-    toys_fan
-  </span>
+
 
 
 
