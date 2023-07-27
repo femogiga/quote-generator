@@ -37,9 +37,9 @@
 }
 
 body {
-  font-size: var(--fs-default);
+  font-size: clamp(1rem, var(--fs-default), 2.4rem);
   line-height: 1.1;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Raleway', sans-serif, 'Courier New', Courier, monospace;
 }
 
 
@@ -160,7 +160,7 @@ a {
   position: absolute;
   right: 2rem;
   top: 1rem;
-  border:none;
+  border: none;
   background-color: unset;
   cursor: pointer
 }
