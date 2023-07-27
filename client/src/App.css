@@ -98,6 +98,7 @@ a {
   margin-left: 5rem;
   padding-block: 2.3rem;
   padding-inline-start: 1rem;
+
 }
 
 .name-tag-container>p {
@@ -108,6 +109,7 @@ a {
 
 .name-tag-container h5 {
   font-size: 1.5rem;
+  /* white-space: nowrap; */
 }
 
 .name-tag-container>div>p {
@@ -188,4 +190,103 @@ a {
   font-size: 6rem;
   animation: rotate 900ms infinite ease-in 400ms;
   color: #DC143C
+}
+
+
+@media only screen and (max-width:900px) {
+  body {
+    font-size: 1.5rem;
+  }
+
+  .card {
+    width: 80%
+  }
+}
+
+@media only screen and (max-width:600px) {
+  #root {
+    padding: 1rem;
+  }
+
+  body {
+    font-size: 1.3rem;
+  }
+
+  /* .author{
+    width:100%
+  } */
+
+  .card {
+    width: 95%;
+    padding: 1rem;
+
+
+  }
+
+  .quote-container {
+    gap: 2rem;
+  }
+
+  .name-tag-container {
+    margin-left: 2rem;
+  }
+
+  .name-tag-container h5 {
+    font-size: 1.1rem;
+    /* white-space: nowrap; */
+
+  }
+
+  .author>h5 {
+    margin-left: 4.4rem;
+    /* background-color: aqua; */
+  }
+
+  .line {
+
+
+    width: 5px;
+    min-width: 5px;
+    max-width: 5px;
+
+
+
+  }
+
+
+}
+
+@media only screen and (max-width:300px) {
+  #root {
+    padding: 2rem 0;
+  }
+
+  body {
+    font-size: 1rem;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .quote-container {
+    gap: 1rem;
+  }
+
+  .author>h5 {
+    margin-left: 2.5rem;
+    /* background-color: aqua; */
+  }
+
+  .refresh-button>button {
+    gap: .3rem;
+    position: absolute;
+    right: 1rem;
+    top: 0;
+
+
+
+  }
+
+
 }
