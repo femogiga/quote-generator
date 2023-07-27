@@ -7,6 +7,7 @@
   --fs-2xl: 1.5rem;
   --fs-3xl: 2rem;
   --fs-4xl: 3rem;
+  --fs-default: 2.25rem;
 }
 
 *,
@@ -32,11 +33,13 @@
   margin: 0 auto;
   padding: 2rem;
   position: relative;
+
 }
 
 body {
-  font-size: var(--fs-3xl);
+  font-size: var(--fs-default);
   line-height: 1.1;
+  font-family: 'Raleway', sans-serif;
 }
 
 
@@ -64,11 +67,12 @@ body {
 /* ***************************************************************************************************************** */
 .card {
   width: 60%;
-  padding: 3rem 3rem 3rem 3rem;
+  padding: 2rem 3rem 2rem 3rem;
   white-space: wrap;
   row-gap: 2rem;
   flex-direction: column;
 }
+
 
 .line {
 
@@ -92,7 +96,7 @@ a {
 
 .name-tag-container {
   margin-left: 5rem;
-  padding-block: 3rem;
+  padding-block: 2.3rem;
   padding-inline-start: 1rem;
 }
 
@@ -102,9 +106,14 @@ a {
 
 }
 
-.name-tag-container>div>p {
+.name-tag-container h5 {
+  font-size: 1.5rem;
+}
 
+.name-tag-container>div>p {
   font-size: var(--fs-sm);
+
+  opacity: .9
 }
 
 
@@ -118,6 +127,17 @@ a {
   justify-content: space-between;
   align-items: center;
 }
+
+.name-tag-container:hover p {
+  color: rgb(199, 192, 192);
+}
+
+
+.name-tag-container:hover .arrow {
+  color: white;
+}
+
+
 
 .author {
   padding-inline: 1rem
@@ -134,11 +154,15 @@ a {
 
 
 
+
 .refresh-button>button {
   gap: .3rem;
   position: absolute;
   right: 2rem;
   top: 1rem;
+  border:none;
+  background-color: unset;
+  cursor: pointer
 }
 
 

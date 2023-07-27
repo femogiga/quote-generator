@@ -21,7 +21,7 @@ const Card = ({ quoteText, onClick, quoteAuthor,quoteGenre }) => {
                         <h5 className='flow-p3'>{quoteAuthor}</h5>
                         <p>{quoteGenre}</p>
                     </div >
-                    <p>&#10141;</p>
+                    <p className="arrow">&#10141;</p>
                 </div>
             </Link>
         </blockquote>
