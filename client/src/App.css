@@ -9,11 +9,23 @@
   --fs-4xl: 3rem;
 }
 
+.app {
+  background-color: rgb(42, 130, 165);
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-inline: 5rem;
+
+
+
+}
+
 #root {
-  max-width: 1300px;
+  max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-  /* background-color:#F7DF94 */
+  /* background-color:#F7DF94; */
+  position: relative;
 }
 
 body {
@@ -41,8 +53,12 @@ body {
   margin-bottom: .3rem;
 }
 
-.align-center{
+.align-center {
   align-items: center;
+}
+
+.flow-6 {
+  margin-block-end: 6rem
 }
 
 /* ***************************************************************************************************************** */
@@ -50,7 +66,6 @@ body {
   width: 60%;
   padding: 3rem 3rem 3rem 3rem;
   white-space: wrap;
-  /* border-left: 1px solid black; */
   row-gap: 2rem;
   flex-direction: column;
 }
@@ -58,8 +73,9 @@ body {
 .line {
 
   writing-mode: vertical-lr;
-  /* min-height: 15rem; */
-  width: 20px;
+  width: 8px;
+  min-width: 8px;
+  max-width: 8px;
   background: #F7DF94;
 
 
@@ -105,20 +121,43 @@ a {
 
 .author>h5 {
   margin-left: 8.5rem;
+  /* background-color: aqua; */
 }
 
 .author .name-tag-container {
   display: none
 }
 
-.refresh-button >button{
-  gap:.3rem;
+
+
+.refresh-button>button {
+  gap: .3rem;
+  position: absolute;
+  right: 2rem;
+  top: 1rem;
 }
 
 
-.refresh-button .material-symbols-outlined{
-  font-size:22px;
+.refresh-button .material-symbols-outlined {
+  font-size: 22px;
 }
-.random-text{
-  font-size:larger
+
+.random-text {
+  font-size: larger;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0)
+  }
+
+  to {
+    transform: rotate(360deg)
+  }
+}
+
+.loading-fan {
+  font-size: 6rem;
+  animation: rotate 900ms infinite ease-in 400ms;
+  color: #DC143C
 }

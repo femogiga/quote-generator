@@ -6,16 +6,19 @@ import { QuoteContext } from './context/QuoteContext'
 import Refresh from './components/Refresh'
 
 
+
 function App() {
   // const [data, setData] = useState([])
   const [authorQuotes, setAuthorQuotes] = useState([])
   const [randomAuthor, setRandomAuthor] = useState("")
+  const Loading = <span className="material-symbols-outlined">
+    toys_fan
+  </span>
 
 
 
 
-
-  const { data, setData, } = useContext(QuoteContext)
+  const { data, setData, isLoading } = useContext(QuoteContext)
 
   useEffect(() => {
     // console.log(data)
@@ -24,7 +27,7 @@ function App() {
 
 
 
-  const handleClick = (e) =>{
+  const handleClick = (e) => {
     e.preventDefault()
     setRandomAuthor(data[random.int(0, data.length - 1)])
   }
@@ -35,10 +38,12 @@ function App() {
 
 
   return (
-    <div>
-      <Refresh onClick={(e)=>handleClick(e)}/>
+    <div className='app'>
+      <Refresh onClick={(e) => handleClick(e)} />
 
-      {data && <Card quoteText={randomAuthor?.quoteText} quoteAuthor={randomAuthor?.quoteAuthor}  authorQuotes={authorQuotes} />}
+      {isLoading ? <span className="material-symbols-outlined loading-fan">
+        toys_fan
+      </span> : <Card quoteText={randomAuthor?.quoteText} quoteAuthor={randomAuthor?.quoteAuthor} authorQuotes={authorQuotes} quoteGenre={randomAuthor?.quoteGenre} />}
     </div>
   )
 }
